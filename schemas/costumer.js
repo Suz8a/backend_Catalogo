@@ -5,3 +5,7 @@ const costumerSchema = new mongoose.Schema({
     email: String,
     phone: Number
 });
+
+mongoose.model('costumer',costumerSchema);
+
+module.exports = mongoose.model('costumer');

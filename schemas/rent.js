@@ -7,3 +7,7 @@ const rentSchema = new mongoose.Schema({
     costumerId: String,
     movieId: String
 });
+
+mongoose.model('rent',costumerSchema);
+
+module.exports = mongoose.model('rent');
