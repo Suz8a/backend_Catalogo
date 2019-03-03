@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended:true}));
 router.use(bodyParser.json);
 
-const rent = require('./rent');
+const rent = require('../schemas/rent');
 
 router.post('/',function(req,res){
 

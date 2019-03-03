@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended:true}));
 router.use(bodyParser.json);
 
-const costumer = require('./costumer');
+const costumer = require('../schemas/costumer');
 
 //newCostumer
 router.post('/',function(req,res){

@@ -7,6 +7,6 @@ const movieSchema = new mongoose.Schema({
     launchYear: String
 });
 
-mongoose.model('movie',costumerSchema);
+mongoose.model('movie',movieSchema);
 
 module.exports = mongoose.model('movie');

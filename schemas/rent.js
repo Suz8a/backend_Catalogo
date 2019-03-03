@@ -8,6 +8,6 @@ const rentSchema = new mongoose.Schema({
     movieId: String
 });
 
-mongoose.model('rent',costumerSchema);
+mongoose.model('rent',rentSchema);
 
 module.exports = mongoose.model('rent');

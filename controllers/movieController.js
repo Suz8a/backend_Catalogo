@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended:true}));
 router.use(bodyParser.json);
 
-const movie = require('./movie');
+const movie = require('../schemas/movie');
 
 router.post('/',function(req,res){
 
