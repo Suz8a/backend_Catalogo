@@ -1,0 +1,24 @@
+{
+  "name": "backend_catalogo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "router.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Suz8a/backend_Catalogo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Suz8a/backend_Catalogo/issues"
+  },
+  "homepage": "https://github.com/Suz8a/backend_Catalogo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.16"
+  }
+}
