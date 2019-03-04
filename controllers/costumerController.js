@@ -2,14 +2,11 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 
-router.use(bodyParser.urlencoded({extended:true}));
-router.use(bodyParser.json);
-
 const costumer = require('../schemas/costumer');
 
 //newCostumer
 router.post('/',function(req,res){
-
+    console.log('Entró post');
     costumer.create({
         name: req.body.name,
         email: req.body.email,
@@ -24,7 +21,7 @@ router.post('/',function(req,res){
 
 router.get('/',function(req,res){
 
-    costumer.finc({},function(err, costumers){
+    costumer.find({},function(err, costumers){
         if(err) return res.status(500).send("Problem finding costumers")
         res.status(200).send(costumers);
     });

@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 
-router.use(bodyParser.urlencoded({extended:true}));
-router.use(bodyParser.json);
-
 const rent = require('../schemas/rent');
 
 router.post('/',function(req,res){
@@ -25,7 +22,7 @@ router.post('/',function(req,res){
 
 router.get('/',function(req,res){
 
-    rent.finc({},function(err, rents){
+    rent.find({},function(err, rents){
         if(err) return res.status(500).send("Problem finding rents")
         res.status(200).send(rents);
     });
