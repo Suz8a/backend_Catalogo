@@ -40,7 +40,7 @@ router.get('/:id',function(req,res){
 //update rent
 
 router.put('/:id', function(req,res){
-    rent.findOneAndUpdate(req.params.id, req.body, {new:true},
+    rent.findByIdAndUpdate(req.params.id, req.body, {new:true},
         function(err, rent){
             if(err,rent)return res.status(500).send("There Problem updating rent<<si lo hace, errorFindAndModify is deprecated");
             res.status(200).send(rent);

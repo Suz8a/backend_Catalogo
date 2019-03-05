@@ -39,7 +39,7 @@ router.get('/:id',function(req,res){
 //update movie
 
 router.put('/:id', function(req,res){
-    movie.findOneAndUpdate(req.params.id, req.body, {new:true},
+    movie.findByIdAndUpdate(req.params.id, req.body, {new:true},
         function(err, movie){
             if(err,movie)return res.status(500).send("There Problem updating movie<<si lo hace, errorFindAndModify is deprecated");
             res.status(200).send(movie);

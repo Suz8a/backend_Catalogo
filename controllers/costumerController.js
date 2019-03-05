@@ -39,7 +39,7 @@ router.get('/:id',function(req,res){
 //update costumer
 
 router.put('/:id', function(req,res){
-    costumer.findOneAndUpdate(req.params.id, req.body, {new:true},
+    costumer.findByIdAndUpdate(req.params.id, req.body, {new:true},
         function(err, costumer){
             if(err,costumer)return res.status(500).send("There Problem updating costumer<<si lo hace, errorFindAndModify is deprecated");
             res.status(200).send(costumer);
