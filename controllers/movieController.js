@@ -19,6 +19,33 @@ router.post('/',function(req,res){
     });
 });
 
+router.delete('/:id', function(req,res){
+
+    movie.findByIdAndRemove(req.params.id, function(err,movie){
+        if(err)return res.status(500).send("Problem deleting movie");
+        res.status(200).send("movie: "+ movie.name + "deleted");
+    });
+});
+
+router.get('/:id',function(req,res){
+    
+    movie.findById(req.params.id,function(err,movie){
+        if(err)return res.status(500).send("Problem Finding movie");
+        if(!movie)return res.status(404).send("movie not found");
+        res.status(200).send(movie);
+    });
+});
+
+//update movie
+
+router.put('/:id', function(req,res){
+    movie.findOneAndUpdate(req.params.id, req.body, {new:true},
+        function(err, movie){
+            if(err,movie)return res.status(500).send("There Problem updating movie<<si lo hace, errorFindAndModify is deprecated");
+            res.status(200).send(movie);
+        });
+});
+
 router.get('/',function(req,res){
 
     movie.find({},function(err, movies){
